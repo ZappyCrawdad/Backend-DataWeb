@@ -3,13 +3,14 @@ header("Access-Control-Allow-Origin: *"); // Permite solicitudes desde cualquier
 header("Content-Type: application/json; charset=UTF-8");
 
 // Obtén las credenciales desde variables de entorno
-$servername = getenv("MYSQL_HOST"); // Usa "MYSQL_HOST" o extrae desde "MYSQL_URL"
-$username = getenv("MYSQL_USER");
-$password = getenv("MYSQL_PASS");
-$dbname = getenv("MYSQL_DB");
+$servername = getenv("MYSQLHOST");
+$username = getenv("MYSQLUSER");
+$password = getenv("MYSQLPASSWORD");
+$dbname = getenv("MYSQLDATABASE");
+$port = getenv("MYSQLPORT") ?: 3306; // Usa el puerto de la variable o el predeterminado (3306)
 
 // Conectar a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 
 // Verifica si hay errores en la conexión
 if ($conn->connect_error) {
