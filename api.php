@@ -1,13 +1,13 @@
 <?php
-header("Access-Control-Allow-Origin: *"); // Permite solicitudes desde cualquier dominio
+header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-// Obtén las credenciales desde variables de entorno
-$servername = getenv("MYSQLHOST");
-$username = getenv("MYSQLUSER");
-$password = getenv("MYSQLPASSWORD");
-$dbname = getenv("MYSQLDATABASE");
-$port = getenv("MYSQLPORT") ?: 3306; // Usa el puerto de la variable o el predeterminado (3306)
+// Datos de conexión según tu URL de Railway
+$servername = "caboose.proxy.rlwy.net";
+$username = "root";
+$password = "NOwdrqdGKaDenyYSQkSQracyDYeBjvYT";
+$dbname = "railway";
+$port = 35643; // Puerto que indica Railway
 
 // Conectar a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
