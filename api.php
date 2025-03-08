@@ -7,7 +7,6 @@ $servername = "caboose.proxy.rlwy.net";
 $username = "root"; 
 $password = "NOwdrqdGKaDenyYSQkSQracyDYeBjvYT"; 
 $dbname = "railway";
-$port = 35643; // Puerto según tu conexión local
 
 // Conectar a la base de datos
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
